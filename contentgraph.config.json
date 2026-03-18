@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0",
+  "contentDir": "content",
+  "contentTypes": [
+    {
+      "name": "Articles",
+      "slug": "articles",
+      "fields": [
+        {
+          "name": "title",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "status",
+          "type": "Enum",
+          "required": true,
+          "enumValues": [
+            "draft",
+            "published",
+            "archived"
+          ]
+        },
+        {
+          "name": "author",
+          "type": "Reference",
+          "required": false,
+          "reference": "authors"
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "required": false
+        },
+        {
+          "name": "publishedAt",
+          "type": "Date",
+          "required": false
+        },
+        {
+          "name": "excerpt",
+          "type": "String",
+          "required": false
+        },
+        {
+          "name": "coverImage",
+          "type": "Media",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Authors",
+      "slug": "authors",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "avatar",
+          "type": "Media",
+          "required": false
+        },
+        {
+          "name": "twitter",
+          "type": "String",
+          "required": false
+        },
+        {
+          "name": "bio",
+          "type": "RichText",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
